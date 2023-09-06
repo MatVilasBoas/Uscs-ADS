@@ -1,0 +1,47 @@
+body {
+    background-color: #6194c7
+}
+
+a {
+    color: rgb(0, 0, 255)
+}
+
+h1 {
+    background-color:  rgb(224, 195, 28);
+    padding-left: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    background-color: lightgray;
+    text-align:center; 
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto
+}
+
+.p1 {
+    display: inline-flex;
+}
+
+h3 {
+    color:#194d81;
+    padding-left: 35px
+}
+
+p {
+    padding-left: 35px
+}
+
+li {
+    padding-left: 35px
+}
+
+.liv {
+    color: rgb(200, 0, 0)
+}
+
+i {
+    color: rgb(50, 83, 121)
+}

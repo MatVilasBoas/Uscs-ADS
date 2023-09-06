@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário3</title>
+</head>
+<body>
+    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+
+        <fieldset>
+        <legend>Dados Pessoais:</legend>
+        <br>
+        Nome:
+        <input type="text" id="name" name="nome"/>
+        <br>
+        Idade:
+        <input type="text" id="age" name="idade"/>
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset>
+        <legend>Dados Profissionais:</legend>
+        <br>
+        Escolaridade:
+        <select name="escolaridade" id="escolaridade">
+            <option value="Ensino Médio">Ensino Médio</option>
+            <option value="Ensino Superior">Ensino Superior</option>
+        </select>
+        <br>
+        Área de atuação:
+        <input type="radio" id="gerencia" name="gerencia" value="gerencia"> <label for="gerencia">Gerência</label>
+        <input type="radio" id="financeiro" name="financeiro" value="financeiro"> <label for="financeiro">Financeiro</label>
+        <input type="radio" id="recepcao" name="recepcao" value="recepcao"> <label for="recepcao">Recepção</label>
+        </fieldset>
+    </form>
+</body>
+</html>

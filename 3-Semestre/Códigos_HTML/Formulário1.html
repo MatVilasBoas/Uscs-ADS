@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário1</title>
+</head>
+<body>
+    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="get">
+
+        <h3>Digite seus comentários no campo abaixo:</h3>
+        <br>
+        <textarea id="meutexto" name="comentario" cols="35" rows="5"></textarea>
+        <h3>Diga-nos como entrar em contato com você:</h3>
+        Nome: <input type="text" id="name" name="nome"/>
+        Email: <input type="text" id="email" name="email" />
+        Fone: <input type="text" id="fone" name="telefone"/>
+        <br>
+        <br>
+        <input type="checkbox" id="nvdsemail" name="nvdsemail" value="nvdsemail"> <label for="nvdsemail">Quero receber as novidades do site por e-mail</label>
+        <br>
+        <br>
+        <input type="button" value="Enviar Dados:" />
+        <input type="reset" value="Limpar Formulário:" />
+    </form>
+</body>
+</html>
