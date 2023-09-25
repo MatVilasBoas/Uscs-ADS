@@ -2,7 +2,8 @@ create procedure contagem (@limite int, @tipo int)
 as begin
    declare @i int
 
-   if @tipo = 1 begin
+   if @tipo = 1 -- regressiva
+      begin
       set @i = @limite
       while @i >= 1 begin
          select valor = @i
@@ -10,7 +11,8 @@ as begin
       end
    end
 
-   if @tipo = 2 begin
+   if @tipo = 2 -- progresiva
+      begin
       set @i = 1
       while @i <= @limite begin
         select valor = @i
