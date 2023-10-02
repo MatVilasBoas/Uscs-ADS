@@ -1,4 +1,4 @@
-ALTER PROCEDURE Contagem (@limite int, @tipo int)
+CREATE PROCEDURE Contagem (@limite int, @tipo int)
 AS BEGIN
 	DECLARE @i int
 	if @tipo = 1 -- Regressiva
