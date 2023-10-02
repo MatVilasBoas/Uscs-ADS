@@ -20,7 +20,8 @@ AS BEGIN
 		END
 	END
 END
-
+	
+-- Código While para contar até um limite em SQL
 -----------------------------------------------------
 
 exec contagem 10, 1
