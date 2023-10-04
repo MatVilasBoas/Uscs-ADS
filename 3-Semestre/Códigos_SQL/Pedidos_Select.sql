@@ -11,10 +11,10 @@ SELECT NumeroPedido = p.idPedido,
 
 FROM pedido p 
      INNER JOIN 
-	 cliente c ON p.idCliente = c.idCliente 
+     cliente c ON p.idCliente = c.idCliente 
      INNER JOIN 
-	 status s ON p.idStatus = s.idStatus
-	 INNER JOIN
-	 item i ON p.idPedido = i.idPedido
-	 INNER JOIN
-	 produto pd ON pd.idProduto = i.idProduto
+     status s ON p.idStatus = s.idStatus
+     INNER JOIN
+     item i ON p.idPedido = i.idPedido
+     INNER JOIN
+     produto pd ON pd.idProduto = i.idProduto
