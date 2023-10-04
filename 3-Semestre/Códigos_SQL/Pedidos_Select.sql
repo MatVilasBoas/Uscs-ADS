@@ -1,13 +1,13 @@
 SELECT NumeroPedido = p.idPedido,
        NomeCliente = c.nome,
-	   idCliente = p.idCliente,
+       idCliente = p.idCliente,
        StatusPedido = s.descricao,
-	   ValorPedido = p.valor,
-	   DataPedido = p.data,
-	   idProduto = pd.idProduto,
-	   NomeProduto = pd.descricao,
-	   QuantProduto = i.quantidade,
-	   ValorItem = i.valor 
+       ValorPedido = p.valor,
+       DataPedido = p.data,
+       idProduto = pd.idProduto,
+       NomeProduto = pd.descricao,
+       QuantProduto = i.quantidade,
+       ValorItem = i.valor 
 
 FROM pedido p 
      INNER JOIN 
