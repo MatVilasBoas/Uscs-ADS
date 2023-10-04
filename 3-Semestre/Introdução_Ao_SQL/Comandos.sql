@@ -5,6 +5,8 @@ SELECT X = qualquer nome (dá um apelido),(SELECT X AS qualquer nome tambem serv
 
 UPDATE X = (atualiza coluna)
 
+SET X = X + 1 (define um valor a algo)
+
 FROM = qualquer tabela (busca os dados)
 
 INSERT = (inserir atributo na tabela por código)
