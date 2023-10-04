@@ -3,7 +3,7 @@
 SELECT * (todas as tabelas)
 SELECT X = qualquer nome (dá um apelido),(SELECT X AS qualquer nome tambem serve)
 
-UPDATE X = (atualiza coluna)
+UPDATE X = (atualiza coluna) WHERE X
 
 SET X = X + 1 (define um valor a algo)
 
