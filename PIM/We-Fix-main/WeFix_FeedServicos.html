@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wefix | Feed de Profissionais</title>
+    <!-- Pra Colocar a logo na aba -->
+    <link rel="icon" href="logo.png">
+    <!-- Bootstrap -->  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        .gradient-custom {
+          background: linear-gradient(to bottom right, #9dbaf8, #4a7eee);
+          min-height: 100vh;
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+          font-size: 1rem;
+          line-height: 2.15;
+          padding-left: .75em;
+          padding-right: .75em;
+        }
+        .card-registration .select-arrow {
+          top: 13px;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .content{
+          width: 420px;
+          margin-top: 0px;
+        }
+
+        .ratings{
+          padding: 0.1px;
+          text-align: left;
+        }
+
+        .product-rating{
+          font-size: 20px;
+        }
+
+        .stars i{
+          font-size: 20px;
+          color: #28a745;
+        }
+
+        .rating-text{
+          margin-top: 0.5px;
+        }
+
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #4a7eee;
+      }
+
+      li {
+        float: left;
+        border-right:1px solid #0a0a0a;
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #f0f1f7;
+      }
+
+      .active {
+        background-color: #13339c;
+      }
+
+      .blur-texto {
+      color: transparent !important;
+      text-shadow: 0 0 6px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+    </style>
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="Wefix_PerfilCliente.html">Perfil</a></li>
+    <li><a href="Wefix_SolicitacaoServico.html">Criar Solicitação</a></li>
+    <li><a href="Wefix_ObrasSolicitadas.html">Obras Solicitadas</a></li>
+  </ul>
+  <section class="gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg">
+          <div class="card shadow-2-strong card-registration text-center" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h1 class="mb-4 pb-2 pb-md-2 mb-md-3">Prestadores de Serviço</h3>
+              <form>
+                <img src="./Wefix_Inicio_files/map.png" style="height: 25px; width: 20px; vertical-align: top;">
+                <select name="slt_local">
+                  <option value="" disabled selected>Local</option>
+                  <option value="valor1">São Paulo - SP</option>
+                  <option value="valor2">São Caetano do Sul - SP</option>
+                </select>
+                <img src="./Wefix_Inicio_files/sort.png" style="height: 25px; width: 25px; vertical-align: top; margin-left: 10px;">
+                <select name="slt_ordem">
+                  <option value="" disabled selected>Ordem</option>
+                  <option value="valor1">Ordem Alfabetica</option>
+                  <option value="valor3">Maior nota</option>
+                  <option value="valor4">Menor nota</option>
+                </select>
+                <img src="./Wefix_Inicio_files/funcao.png" style="height: 25px; width: 25px; vertical-align: top; margin-left: 10px;">
+                <select name="slt_funcao">
+                  <option value="" disabled selected>Função</option>
+                  <option value="valor1">Arquiteto</option>
+                  <option value="valor2">Engenheiro</option>
+                  <option value="valor3">Eletricista</option>
+                  <option value="valor4">Encanador</option>
+                  <option value="valor5">Mestre de Obra</option>
+                  <option value="valor6">Pintor</option>
+                </select>
+              </form>
+              <a href="#" class="btn btn-primary btn-md" style="margin-top: 10px; margin-bottom: 10px">Filtrar</a>
+              <div class="row row-cols-1 row-cols-md-3 g-4"  id="cardEmpreiteiro">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body" style="background-color: #f0f0f0;">
+                      <div class="d-flex align-items-center mb-3">
+                        <img src="./Wefix_Inicio_files/user.png" alt="..." style="width: 60px; height: 60px; margin-right: 15px;" id="avatar">
+                        <h5 class="card-title mb-0" id="nome">Nome</h5>
+                      </div>
+                      <p class="card-footer" id="funcaoElocalizacao">Função - Localização</p>
+                      <div class="d-flex justify-content-text-center">
+                        <div class="content margin">
+                            <div class="ratings">
+                                <img src="./Wefix_Inicio_files/estrela.png" style="height: 17px; width: 15px; vertical-align: center;">
+                                <span class="product-rating">4.6</span><span></span>
+                            </div>
+                        </div>
+                    </div> 
+                    </div>
+                    <div class="card-footer">
+                      <a href="#" class="btn btn-primary btn-md">Contratar</a>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#perfilModal">
+                        Ver Perfil
+                      </button>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Modal -->
+  <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="perfilModalLabel">Perfil Profissional</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- HTML -->
+          <div class="container" style="padding-top: 1pc;">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-4">
+                <div class="card mb-4">
+                  <div class="card-body text-center">
+                    <img src="./Wefix_Inicio_files/user.png" alt="avatarCliente" class="rounded-circle img-fluid" style="width: 150px;">
+                    <h3 class="my-3" id="nomePerfil">Nome</h5>
+                    <h4 class="my-3" id="especialidadePerfil">Especialidade</h5>
+                    <p class="text-muted mb-1 blur-texto" id="emailPerfil">E-Mail</p>
+                    <p class="text-muted mb-4 blur-texto" id="localPerfil">Local</p>
+                    <!-- <div class="d-flex justify-content-center mb-2">
+                      <button type="button" class="btn btn-primary">Seguir</button>
+                      <button type="button" class="btn btn-outline-primary ms-1">Enviar Mensagem</button>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Nome Completo</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0" id="nomeModal">*Nome*</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Especialidade</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0" id="especialidadeModal">*Especialidade*</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0 blur-texto" id="emailModal">exemplo@exemplo</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Telefone</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0 blur-texto" id="telefoneModal">(000) 0000-0000</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Endereço</p>
+                      </div>
+                      <div class="col-sm-9">
+                        <p class="text-muted mb-0 blur-texto" id="enderecoModal">*Endereço*</p>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <p class="mb-0">Certificados</p>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="thumbnail">
+                          <img src="/w3images/nature.jpg" alt="INSERIR IMAGEM" style="width:100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Pega as End Points de cada tipo de empreiteiro
+    const arquitetoEndPoint = 'http://localhost:3002/arquitetos/';
+    const engenheiroEndPoint = 'http://localhost:3002/engenheiros/';
+    const profissionalEndPoint = 'http://localhost:3002/profissionalgeral/';
+    
+    // Fetch Tabela do arquiteto
+    fetch(arquitetoEndPoint)
+      .then(response => response.json())
+      .then(data => alimentaFeed(data, 'cardEmpreiteiro', 'Arquiteto'))
+      .catch(error => console.error('Error:', error));
+    
+    // Fetch Tabela do engenheiro
+    fetch(engenheiroEndPoint)
+      .then(response => response.json())
+      .then(data => alimentaFeed(data, 'cardEmpreiteiro', 'Engenheiro'))
+      .catch(error => console.error('Error:', error));
+
+    // Fetch Tabela do Profissional Geral
+    fetch(profissionalEndPoint)
+      .then(response => response.json())
+      .then(data => alimentaFeed(data, 'cardEmpreiteiro', 'Profissional Geral'))
+      .catch(error => console.error('Error:', error));
+    
+    // Função Pra adicionar Empreiteiro no grid
+    function alimentaFeed(data, cardContainerId, funcao) {
+    const cardContainer = document.getElementById(cardContainerId);
+    data.forEach(empreiteiro => {
+      let funcaoFinal = funcao;
+      if (funcao === 'Profissional Geral') {
+        funcaoFinal = empreiteiro.especialidade;
+      }
+      const card = document.createElement('div');
+      card.className = 'col';
+      card.innerHTML = `
+      <div class="card">
+        <div class="card-body" style="background-color: #f0f0f0;">
+          <div class="d-flex align-items-center mb-3">
+            <img src="./Wefix_Inicio_files/user.png" alt="..." style="width: 60px; height: 60px; margin-right: 15px;" id="avatar">
+            <h5 class="card-title mb-0" id="nome">${empreiteiro.nome}</h5>
+          </div>
+          <p class="card-footer" id="funcaoElocalizacao">${funcaoFinal} - ${empreiteiro.local}</p>
+          <div class="d-flex justify-content-text-center">
+            <div class="content margin">
+              <div class="ratings">
+                <img src="./Wefix_Inicio_files/estrela.png" style="height: 17px; width: 15px; vertical-align: center;">
+                <span class="product-rating">${empreiteiro.nota.toFixed(1)}</span><span></span>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="card-footer">
+          <a href="Wefix_CadastroObra.html" class="btn btn-primary btn-md" onclick="localStorage.setItem('empreiteiro', '${empreiteiro.email}')">Contratar</a>
+          <a href="#" class="btn btn-primary btn-md ver-perfil-btn" data-bs-toggle="modal" data-bs-target="#perfilModal">Ver Perfil</a>
+        </div>
+      </div>
+      `;
+      cardContainer.appendChild(card);
+
+      // Add event listener to the "Ver Perfil" button
+      card.querySelector('.ver-perfil-btn').addEventListener('click', () => {
+        popularModal(empreiteiro, funcaoFinal);
+      });
+    });
+    }
+
+    function popularModal(empreiteiro, funcao) {
+      // Populate the modal with empreiteiro data
+      // For example:
+      document.getElementById('nomePerfil').innerHTML = empreiteiro.nome;
+      document.getElementById('especialidadePerfil').innerHTML = funcao;
+      document.getElementById('emailPerfil').innerHTML = empreiteiro.email;
+      document.getElementById('localPerfil').innerHTML = empreiteiro.local;
+
+      document.getElementById('nomeModal').innerHTML = empreiteiro.nome;
+      document.getElementById('especialidadeModal').innerHTML = funcao;
+      document.getElementById('emailModal').innerHTML = empreiteiro.email;
+      document.getElementById('telefoneModal').innerHTML = empreiteiro.telefone;
+      document.getElementById('enderecoModal').innerHTML = empreiteiro.endereco;
+    }
+    
+    window.onload = function() {
+      console.log('User: ' + getCookie('user'));
+      
+    }
+
+    // Função pra pegar um cookie especifico
+    function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+  </script>
+</body>
+</html>
